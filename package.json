@@ -2,12 +2,14 @@
   "name": "nodejs-ts-boilerplate",
   "version": "1.0.0",
   "description": "The boilerplate follow instructions here: https://gist.github.com/silver-xu/1dcceaa14c4f0253d9637d4811948437",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
     "lint": "eslint src/**/*.ts",
-    "format": "eslint src/**/*.ts --fix"
+    "format": "eslint src/**/*.ts --fix",
+    "start:dev": "nodemon",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/app.js"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +24,10 @@
     "@typescript-eslint/parser": "^4.22.1",
     "eslint": "^7.26.0",
     "husky": "^6.0.0",
+    "nodemon": "^2.0.7",
     "prettier": "^2.3.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   }
 }
